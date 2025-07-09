@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import API from '../api'; // baseURL: http://localhost:1337/api
+import {BACKEND_URL} from '../config'
 
 const CaseStudyCard = () => {
   const [cards, setCards] = useState([]);
@@ -24,7 +25,7 @@ const CaseStudyCard = () => {
     <div className="flex flex-wrap justify-center gap-8 px-8 py-10">
       {cards.map((card) => {
         const imagePath = card.imageCaseCard?.formats?.small?.url || '';
-        const fullImageUrl = `http://localhost:1337${imagePath}`;
+        const fullImageUrl = `${BACKEND_URL}${imagePath}`;
 
         return (
           <div key={card.id} className="rounded-xl overflow-hidden shadow-md">
