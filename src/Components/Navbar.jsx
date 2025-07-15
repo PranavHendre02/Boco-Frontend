@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdArrowOutward } from "react-icons/md";
 import API from '../api';
-import { useNavigate } from 'react-router-dom';
+
+
 
 
 const Navbar = () => {
@@ -22,13 +23,11 @@ const Navbar = () => {
 
         const navbar = firstItem;
 
-        const pageNames = Array.isArray(navbar.PageName)
-          ? navbar.PageName.map(p => p.children?.[0]?.text?.trim()).filter(Boolean)
-          : [];
+      
 
         setNavbarData({
           brand: navbar.NavbarBrandname,
-          pages: pageNames
+          
         });
 
       } catch (err) {
@@ -54,9 +53,12 @@ const Navbar = () => {
         </div>
         <div className="w-full flex justify-center">
           <div className="h-[55px] w-[595px] border-2 rounded-[3rem] flex items-center justify-between px-6 text-[18px] font-medium text-purple border-light-purple">
-            {navbarData.pages.map((page, idx) => (
+            {/* {navbarData.pages.map((page, idx) => (
               <Link key={idx} to={`/${page.replace(/\s+/g, '-')}`} className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300" >{page}</Link>
-            ))}
+            ))} */}
+            <Link to="/Shopify-Store-Build"  className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Shopify Store Build</Link>
+            <Link to="/Landing-Page-Design "  className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Landing Page Design </Link>
+            <Link to="/Case-Studies"  className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Case Studies</Link>
           </div>
         </div>
 
