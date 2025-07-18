@@ -4,10 +4,14 @@ import Footer from "../Components/Footer";
 import API from "../api";
 import { MdArrowOutward } from "react-icons/md";
 import Qna from "../Components/Qna";
+import { useNavigate } from "react-router-dom";
 
 const ShopifyStoreBuild = () => {
+    const navigate = useNavigate()
     const [data, setData] = useState(null);
-
+    const NewPage = () => {
+        navigate("/Newpage");
+    }
     useEffect(() => {
         const fetchShopifyData = async () => {
             try {
@@ -53,10 +57,10 @@ const ShopifyStoreBuild = () => {
                 </p>
 
                 <div className="flex gap-4 mb-10">
-                    <button className="w-44 h-16 border-2 border-purple text-purple text-lg font-medium rounded-full hover:bg-purple hover:text-white transition">
+                    <button onClick={() => NewPage()} className="w-44 h-16 border-2 border-purple text-purple text-lg font-medium rounded-full hover:bg-purple hover:text-white transition">
                         Audit My Website
                     </button>
-                    <button className="flex items-center justify-center w-44 h-16 bg-purple text-white text-lg font-medium rounded-full">
+                    <button onClick={() => NewPage()} className="flex items-center justify-center w-44 h-16 bg-purple text-white text-lg font-medium rounded-full">
                         Talk To Us
                         <span className="ml-4 p-3 bg-white text-black rounded-full text-xl">
                             <MdArrowOutward />
@@ -176,14 +180,14 @@ const ShopifyStoreBuild = () => {
                                 {Section5Head}
                             </h2>
                             <p className="text-xl font-medium text-[#060237] pb-8 font-[sans-serif]">
-                                {Section5SubHead[0]?.children[0]?.text}
+                                {Section5SubHead[0]?.children[0]?.text || ""}
                             </p>
                             <ul className="list-disc pl-5 text-xl font-bold text-[#060237] space-y-3 mb-6">
                                 <li>Sign up for a FREE Audit</li>
                                 <li>Share the required brand details</li>
                                 <li>Sit back and wait for your audit report</li>
                             </ul>
-                            <button className="flex items-center justify-center w-52 h-14 bg-purple text-white text-lg font-medium rounded-full text-center pl-2">
+                            <button onClick={() => NewPage()} className="flex items-center justify-center w-52 h-14 bg-purple text-white text-lg font-medium rounded-full text-center pl-2">
                                 Audit My Website
                                 <span className="ml-4 p-3 bg-white text-black rounded-full text-xl">
                                     <MdArrowOutward />
@@ -229,7 +233,7 @@ const ShopifyStoreBuild = () => {
                         </div>
                     </div>
                     <div className="pb-20">
-                        <button className="flex items-center justify-center w-44 h-14 bg-purple text-white text-lg font-medium rounded-full text-center pl-2 ">
+                        <button onClick={() => NewPage()} className="flex items-center justify-center w-44 h-14 bg-purple text-white text-lg font-medium rounded-full text-center pl-2 ">
                             Talk To Us
                             <span className="ml-4 p-3 bg-white text-black rounded-full text-xl">
                                 <MdArrowOutward />
@@ -239,7 +243,7 @@ const ShopifyStoreBuild = () => {
                 </div>
             </section>
 
-            <Qna/>
+            <Qna />
 
             <Footer />
         </>

@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdArrowOutward } from "react-icons/md";
 import API from '../api';
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const [data, setData] = useState(null);
+  const NewPage = () => {
+    navigate("/Newpage");
+  }
   const [navbarData, setNavbarData] = useState(null);
 
   useEffect(() => {
@@ -23,11 +29,11 @@ const Navbar = () => {
 
         const navbar = firstItem;
 
-      
+
 
         setNavbarData({
           brand: navbar.NavbarBrandname,
-          
+
         });
 
       } catch (err) {
@@ -56,13 +62,14 @@ const Navbar = () => {
             {/* {navbarData.pages.map((page, idx) => (
               <Link key={idx} to={`/${page.replace(/\s+/g, '-')}`} className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300" >{page}</Link>
             ))} */}
-            <Link to="/Shopify-Store-Build"  className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Shopify Store Build</Link>
-            <Link to="/Landing-Page-Design "  className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Landing Page Design </Link>
-            <Link to="/Case-Studies"  className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Case Studies</Link>
+            <Link to="/Shopify-Store-Build" className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Shopify Store Build</Link>
+            <Link to="/Landing-Page-Design " className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Landing Page Design </Link>
+            <Link to="/Case-Studies" className="px-4 py-2 rounded-full hover:bg-light-purple transition duration-300">Case Studies</Link>
           </div>
         </div>
 
         <button
+          onClick={() => NewPage()}
           className='flex items-center justify-center w-60 h-14 bg-purple text-white text-[1rem] font-medium rounded-[8rem] mr-32'
         >
           <p className='flex items-center justify-center ml-4'>Talk To Us</p>

@@ -1,65 +1,91 @@
-import React, { useEffect, useState } from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
-import CaseStudyCard from '../Components/CaseStudyCard';
-import API from '../api';
-import Talktous from '../Pages/Talktous';
-
-
+import React from 'react'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
+import CaseStudyCard from '../Components/CaseStudyCard'
+import { MdArrowOutward } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import API from "../api";
 
 const Home = () => {
-  const [casePageData, setCasePageData] = useState(null);
-
-  useEffect(() => {
-    const fetchCaseStudies = async () => {
-      try {
-        const res = await API.get('/case-study-page?populate=*');
-        const pageData = res.data?.data;
-        console.log("✅ Page Data:", pageData);
-        setCasePageData(pageData);
-      } catch (error) {
-        console.error(' Error fetching case study page:', error);
-      }
-    };
-
-    fetchCaseStudies();
-  }, []);
-
-  if (!casePageData) {
-    return <p className="text-center mt-10 text-gray-500"></p>;
+  // const navigateCase useNavigate();
+  const navigate = useNavigate()
+  const [data, setData] = useState(null);
+  const NewPage = () => {
+    navigate("/Newpage");
   }
 
-  const heading = casePageData.CaseStudyPageHead;
-  const subheading = casePageData.CaseStudyPageSub?.[0]?.children?.[0]?.text;
-  const footerHeading = casePageData.CaseStudyPageFooterHead?.[0]?.children?.[0]?.text;
+  useEffect(() => {
+    const loaddetails = async () => {
+      try {
+        // let res = await API.get('https://boco-backend-q5zy.onrender.com/api/main-page')
+        let res = await API.get('https://boco-backend-q5zy.onrender.com/api/main-page')
+        console.log(res.data);
+      } catch (error) {
+        console.log("this is the Error" + error);
 
+      }
+    }
+    loaddetails();
+
+  }, [])
+
+  const Newcase = () => {
+    navigate("/Case-Studies")
+  }
   return (
     <div>
       <Navbar />
-      <div className='flex items-center justify-center font-[sans-serif]'>
-        <div className='w-[1248px] text-center'>
-          <p className='text-3xl font-semibold text-light-gray mt-10 capitalize'>case studies</p>
-          <h1 className='text-5xl font-bold text-purple mt-10'>{heading}</h1>
-          <p className='text-2xl font-normal text-light-blue mt-10 mb-10'>{subheading}</p>
+
+      <div className='flex items-center justify-center mt-[69px] mb-[69px]'>
+        <div className='w-[1440px] h-[197px] flex items-center justify-center '>
+          <h1 className='text-5xl font-bold text-purple'>
+            Read our recent Case Studies
+          </h1>
         </div>
       </div>
 
+      <CaseStudyCard />
 
-    <CaseStudyCard/>
+      <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center mt-20 mb-20">
+        <button onClick={() => Newcase()} className="w-60 h-16 border-2 border-purple text-purple text-lg font-medium rounded-full hover:bg-purple hover:text-white transition">
+          Explore More Case Studies
+        </button>
+      </div>
 
+      <section className=" bg-[#F6F3FF] ">
+        <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center">
+          <div>
+            <h1 className="text-5xl font-bold text-[#060237] pt-28 font-[sans-serif] mb-20">
+              Let’s create something extraordinary together
+            </h1>
+          </div>
+          <div className="flex gap-4 mb-20">
+            <button onClick={() => NewPage()} className="w-44 h-16 border-2 border-purple text-purple text-lg font-medium rounded-full hover:bg-purple hover:text-white transition">
+              Audit My Website
+            </button>
+            <button onClick={() => NewPage()} className="flex items-center justify-center w-44 h-16 bg-purple text-white text-lg font-medium rounded-full">
+              Book Call
+              <span className="ml-4 p-3 bg-white text-black rounded-full text-xl">
+                <MdArrowOutward />
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
 
       <div className='flex items-center justify-center mt-[69px] mb-[69px]'>
         <div className='w-[1440px] h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
           <h1 className='text-5xl font-bold text-purple'>
-            {footerHeading}
+            {/* {footerHeading} */}
+            Faster Websites. Higher conversion. More revenue.
           </h1>
         </div>
       </div>
-    
-      <Footer />
-      <Talktous/>
-    </div>
-  );
-};
 
-export default Home;
+      <Footer />
+    </div>
+  )
+}
+
+export default Home

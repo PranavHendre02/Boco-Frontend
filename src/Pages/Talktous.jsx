@@ -4,8 +4,14 @@ import { MdArrowOutward } from "react-icons/md";
 import API from '../api';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import { useNavigate } from "react-router-dom";
 
 const Talktous = () => {
+    const navigate = useNavigate()
+    const [data, setData] = useState(null);
+    const NewPage = () => {
+        navigate("/Newpage");
+    }
     const [formData, setFormData] = useState({
         brandname: '',
         yourname: '',
@@ -202,6 +208,7 @@ const Talktous = () => {
                             <div className='flex justify-center '>
                                 <button
                                     type="submit"
+                                    onClick={() => NewPage()}
                                     className="flex items-center justify-center w-44 h-16 bg-purple text-white text-[1rem] font-medium rounded-[8rem] mt-16 mb-32"
                                 >
                                     <p className="flex items-center justify-center ml-4">Submit</p>
@@ -222,7 +229,7 @@ const Talktous = () => {
                     </h1>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };
