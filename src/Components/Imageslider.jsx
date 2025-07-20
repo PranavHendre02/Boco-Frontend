@@ -43,7 +43,9 @@ const Imageslider = () => {
                     prevEl: ".swiper-button-prev-custom",
                 }}
                 spaceBetween={0}
+                
                 slidesPerView={6}
+
                 breakpoints={{
                     320: { slidesPerView: 1.2 },
                     640: { slidesPerView: 2.2 },
