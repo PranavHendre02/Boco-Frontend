@@ -4,6 +4,8 @@ import Home from './Pages/Home'
 import CaseStudies from './Pages/CaseStudies'
 import ShopifyStoreBuild from './Pages/ShopifyStoreBuild'
 import Newpage from './Pages/Newpage'
+// import 'react-slideshow-image/dist/styles.css';
+
 
 const App = () => {
   return (

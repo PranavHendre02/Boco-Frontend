@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.slide-container {
+    height: 100%;
+}
+
+.react-slideshow-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.each-slide>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -6,6 +6,8 @@ import { MdArrowOutward } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import API from "../api";
+import Imageslider from '../Components/Imageslider';
+
 
 const Home = () => {
   // const navigateCase useNavigate();
@@ -18,7 +20,6 @@ const Home = () => {
   useEffect(() => {
     const loaddetails = async () => {
       try {
-        // let res = await API.get('https://boco-backend-q5zy.onrender.com/api/main-page')
         let res = await API.get('https://boco-backend-q5zy.onrender.com/api/main-page')
         console.log(res.data);
       } catch (error) {
@@ -33,9 +34,78 @@ const Home = () => {
   const Newcase = () => {
     navigate("/Case-Studies")
   }
+
+
   return (
     <div>
       <Navbar />
+
+     <section className='flex items-center justify-center'>
+         <Imageslider />
+     </section>
+
+      <section className='flex items-center justify-center'>
+        <div className='px-4 mb-10 mt-24'>
+          <div className='text-center'>
+            <h1 className='text-5xl font-bold text-purple font-sans '>
+              Enhance customer experience
+              by focusing on the details that matters most
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full py-10">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+
+          <div className="bg-[#F6F3FF] rounded-xl p-6 shadow-md">
+            <img
+              src="https://res.cloudinary.com/drtosngvu/image/upload/v1752578644/sample11_ec744124bb.png"
+              alt="Feature 1"
+              className="w-[120px] h-[120px] object-cover mb-6"
+            />
+            <h2 className="text-2xl font-semibold text-purple mb-4">
+              Built for High Conversion Rate
+            </h2>
+            <p className="text-gray-700">
+              Our Core Focus for building any website is to ensure it reaches
+              and outperforms Conversion Rate benchmarks.
+            </p>
+          </div>
+
+
+          <div className="bg-[#F6F3FF] rounded-xl p-6 shadow-md">
+            <img
+              src="https://res.cloudinary.com/drtosngvu/image/upload/v1752578644/sample12_e113451866.png"
+              alt="Feature 2"
+              className="w-[120px] h-[120px] object-cover mb-6"
+            />
+            <h2 className="text-2xl font-semibold text-purple mb-4">
+              Lightning Fast & Visually Stable
+            </h2>
+            <p className="text-gray-700">
+              All our websites follow market-leading benchmarks for speed and
+              stability, ensuring user engagement & enhanced conversions.
+            </p>
+          </div>
+
+
+          <div className="bg-[#F6F3FF] rounded-xl p-6 shadow-md">
+            <img
+              src="https://res.cloudinary.com/drtosngvu/image/upload/v1752578643/sample13_0dd6fe8ec7.png"
+              alt="Feature 3"
+              className="w-[120px] h-[120px] object-cover mb-6"
+            />
+            <h2 className="text-2xl font-semibold text-purple mb-4">
+              Timelines & Budgets On Track
+            </h2>
+            <p className="text-gray-700">
+              We have a well-structured process for Strategy, Design &
+              Development, with phase-wise updates to ensure timely milestones.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div className='flex items-center justify-center mt-[69px] mb-[69px]'>
         <div className='w-[1440px] h-[197px] flex items-center justify-center '>
