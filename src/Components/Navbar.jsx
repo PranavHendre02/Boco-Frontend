@@ -85,10 +85,9 @@ const Navbar = () => {
               navigate("/Newpage");
               setIsOpen(false);
             }}
-            className='flex items-center justify-center w-[20vw] h-14 bg-purple text-white text-[0.85rem] font-medium rounded-[8rem]'
-          >
-            <p className='flex items-center justify-center ml-4'>Talk To Us</p>
-            <div className='p-3 bg-white text-black rounded-[25px] ml-6 text-[1.3rem]'>
+            className='flex items-center justify-center '>
+
+            <div className='p-3 bg-purple text-white  rounded-[25px] ml-6 text-[1.3rem]'>
               <MdArrowOutward />
             </div>
           </button>
