@@ -37,9 +37,9 @@ const CaseStudies = () => {
       <Navbar />
       <div className='flex items-center justify-center font-[sans-serif]'>
         <div className='w-[1248px] text-center'>
-          <p className='text-3xl font-semibold text-light-gray mt-10 capitalize'>case studies</p>
-          <h1 className='text-5xl font-bold text-purple mt-10'>{heading}</h1>
-          <p className='text-2xl font-normal text-light-blue mt-10 mb-10'>{subheading}</p>
+          <p className='md:text-3xl font-semibold text-light-gray md:mt-10 capitalize text-2xl'>case studies</p>
+          <h1 className='md:text-5xl font-bold text-purple mt-10 text-2xl'>{heading}</h1>
+          <p className='md:text-2xl font-normal text-light-blue mt-10 mb-10 text-xl'>{subheading}</p>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ const CaseStudies = () => {
 
       <div className='flex items-center justify-center mt-[69px] mb-[69px]'>
         <div className='w-[1440px] h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
-          <h1 className='text-5xl font-bold text-purple'>
+          <h1 className='md:text-5xl font-bold text-purple text-xl text-center'>
             {footerHeading}
           </h1>
         </div>

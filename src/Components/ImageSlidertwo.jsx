@@ -8,34 +8,19 @@ import "swiper/css/navigation";
 
 const Images = [
   {
-    url: 'https://res.cloudinary.com/drtosngvu/image/upload/v1752578537/sample1_ee776cb6fa.png'
+    url: 'https://res.cloudinary.com/drtosngvu/image/upload/v1752578689/sample26_7db93ff7f1.png'
   },
   {
-    url: 'https://res.cloudinary.com/drtosngvu/image/upload/v1752578542/sample2_383a886e56.png'
+    url: 'https://res.cloudinary.com/drtosngvu/image/upload/v1752578687/sample27_7c916b30d2.png'
   },
   {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578539/sample3_07e3cde9bd.png"
-  },
-  {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578605/sample4_add9a5a0ff.png"
-  },
-  {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578600/sample5_21c25e1525.png"
-  },
-  {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578613/sample6_41e7fef700.png"
-  },
-  {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578611/sample7_cd83469045.png"
-  },
-  {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578604/sample8_eb71d3ce0c.png"
+    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578689/sample28_956613db54.png"
   },
 ];
 
-const Imageslider = () => {
+const Imageslidertwo = () => {
   return (
-    <div className="relative w-[95vw] mx-auto">
+    <div className="relative w-[95vw] ">
       <Swiper
         modules={[Navigation]}
         navigation={{
@@ -74,4 +59,4 @@ const Imageslider = () => {
   );
 };
 
-export default Imageslider;
+export default Imageslidertwo;

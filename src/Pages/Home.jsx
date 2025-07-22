@@ -109,7 +109,7 @@ const Home = () => {
 
       <div className='flex items-center justify-center md:mt-[69px] md:mb-[69px]'>
         <div className='w-[1440px] h-[197px] flex items-center justify-center '>
-          <h1 className='text-3xl font-bold text-purple md:text-4xl'>
+          <h1 className='text-3xl font-bold text-purple md:text-4xl text-center'>
             Read our recent Case Studies
           </h1>
         </div>
@@ -118,7 +118,7 @@ const Home = () => {
       <CaseStudyCard />
 
       <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center mt-20 mb-20">
-        <button onClick={() => Newcase()} className="md:w-60 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[30vw] h-[8vh]">
+        <button onClick={() => Newcase()} className="md:w-60 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[50vw] h-[8vh]">
           Explore More Case Studies
         </button>
       </div>
@@ -126,7 +126,7 @@ const Home = () => {
       <section className=" bg-[#F6F3FF] ">
         <div className="w-full mx-auto flex items-center flex-col justify-center">
           <div>
-            <h1 className="text-2xl font-bold text-[#060237] pt-28 font-[sans-serif] mb-20 md:text-4xl">
+            <h1 className="text-2xl font-bold text-[#060237] pt-28 font-[sans-serif] mb-20 md:text-4xl text-center">
               Let’s create something extraordinary together
             </h1>
           </div>
@@ -146,7 +146,7 @@ const Home = () => {
 
       <div className='flex items-center justify-centermd: mt-[69px] md:mb-[69px]'>
         <div className='w-full h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
-          <h1 className='md:text-5xl font-bold text-purple text-xl'>
+          <h1 className='md:text-5xl font-bold text-purple text-xl text-center'>
             {/* {footerHeading} */}
             Faster Websites. Higher conversion. More revenue.
           </h1>

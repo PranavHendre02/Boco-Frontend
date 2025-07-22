@@ -38,10 +38,10 @@ const Qna = () => {
     };
 
     return (
-        <div className='flex items-center justify-center bg-white px-4 mb-48'>
+        <div className='flex items-center justify-center bg-white px-4 md:mb-48 mb-16'>
             <div className='w-full max-w-[1200px]'>
                 <div className='text-center'>
-                    <h1 className='text-6xl font-bold text-[#060237] pt-20 pb-20 font-[sans-serif]'>
+                    <h1 className='md:text-6xl font-bold text-[#060237] pt-20 pb-20 font-[sans-serif] text-center text-2xl'>
                         Frequently Asked Questions
                     </h1>
                 </div>
@@ -54,10 +54,10 @@ const Qna = () => {
                                 ${openIndex === index ? 'rounded-t-[25px]' : 'rounded-[25px]'}`}
                                 onClick={() => toggleDropdown(index)}
                             >
-                                <p className='text-[18px] text-purple font-[sans-serif]'>
+                                <p className='md:text-[18px] text-purple font-[sans-serif] text-center '>
                                     {item.question}
                                 </p>
-                                <button className='text-[18px] text-purple font-[sans-serif]'>
+                                <button className='text-[18px] text-purple font-[sans-serif] m-2'>
                                     <FaChevronDown />
                                 </button>
                             </div>
