@@ -124,7 +124,7 @@ const Home = () => {
       </div>
 
       <section className=" bg-[#F6F3FF] ">
-        <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center">
+        <div className="w-full mx-auto flex items-center flex-col justify-center">
           <div>
             <h1 className="text-2xl font-bold text-[#060237] pt-28 font-[sans-serif] mb-20 md:text-4xl">
               Let’s create something extraordinary together
@@ -145,7 +145,7 @@ const Home = () => {
       </section>
 
       <div className='flex items-center justify-centermd: mt-[69px] md:mb-[69px]'>
-        <div className='w-[1440px] h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
+        <div className='w-full h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
           <h1 className='md:text-5xl font-bold text-purple text-xl'>
             {/* {footerHeading} */}
             Faster Websites. Higher conversion. More revenue.

@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
-import API from '../api'; 
+import API from '../api';
 
 const Footer = () => {
   const [footerData, setFooterData] = useState(null);
@@ -34,27 +33,27 @@ const Footer = () => {
   if (!footerData) return null;
 
   return (
-    <div className='w-full'>
-      <div className='flex items-start justify-between w-full md:px-32 px-8 gap-8 md:flex-row flex-col'>
-       
-        <div  className="md:w-[50%] text-left" >  
-          <h1 className='text-purple md:text-[2.5rem] text-2xl font-bold lowercase'>
+    <div className='w-full px-4 md:px-8 lg:px-32'>
+      <div className='flex flex-col md:flex-row items-start justify-between gap-8 w-full'>
+
+        <div className="w-full md:w-1/2 text-left">
+          <h1 className='text-purple text-2xl md:text-4xl font-bold lowercase'>
             {footerData.heading}
           </h1>
-          <p className='md:text-[20px] font-[500] text-light-gray leading-relaxed mt-3'>
+          <p className='text-sm md:text-lg font-[500] text-light-gray leading-relaxed mt-3'>
             {footerData.subText1}
           </p>
 
-          <div className="flex gap-4 mt-6 text-[22px] text-purple">
+          <div className="flex gap-4 mt-6 text-xl md:text-2xl text-purple">
             <i className="ri-instagram-line"></i>
             <i className="ri-linkedin-box-fill"></i>
           </div>
         </div>
 
-        <div  className="w-fit md:text-right">
-          <p className='font-bold md:text-[22px] text-xl mb-3 text-black'>Products</p>
+        <div className="w-full md:w-fit text-left md:text-right">
+          <p className='font-bold text-lg md:text-xl mb-3 text-black'>Products</p>
           {footerData.subText2.map((item, idx) => (
-            <p key={idx} className='text-light-gray font-[500] md:text-[20px] mb-1'>
+            <p key={idx} className='text-light-gray font-[500] text-sm md:text-lg mb-1'>
               {item}
             </p>
           ))}
@@ -62,8 +61,8 @@ const Footer = () => {
       </div>
 
       <div className="mt-10 mb-12">
-        <hr className="border-t border-dotted border-light-pink w-[1280px] mx-auto my-4" />
-        <p className='md:text-[18px] font-light text-[#5C5470] ml-32 text-xs text-center'>
+        <hr className="border-t border-dotted border-light-pink w-full my-4" />
+        <p className='text-xs md:text-sm font-light text-[#5C5470] text-center  md:ml-32'>
           © Copyright, BOCO 2024
         </p>
       </div>
