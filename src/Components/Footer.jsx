@@ -35,13 +35,13 @@ const Footer = () => {
 
   return (
     <div className='w-full'>
-      <div className='flex items-start justify-between w-full px-32 gap-8'>
+      <div className='flex items-start justify-between w-full md:px-32 px-8 gap-8 md:flex-row flex-col'>
        
-        <div  className="w-[50%]" >  
-          <h1 className='text-purple text-[2.5rem] font-bold lowercase'>
+        <div  className="md:w-[50%] text-left" >  
+          <h1 className='text-purple md:text-[2.5rem] text-2xl font-bold lowercase'>
             {footerData.heading}
           </h1>
-          <p className='text-[20px] font-[500] text-light-gray leading-relaxed mt-3'>
+          <p className='md:text-[20px] font-[500] text-light-gray leading-relaxed mt-3'>
             {footerData.subText1}
           </p>
 
@@ -51,10 +51,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div  className="w-fit text-right">
-          <p className='font-bold text-[22px] mb-3 text-black'>Products</p>
+        <div  className="w-fit md:text-right">
+          <p className='font-bold md:text-[22px] text-xl mb-3 text-black'>Products</p>
           {footerData.subText2.map((item, idx) => (
-            <p key={idx} className='text-light-gray font-[500] text-[20px] mb-1'>
+            <p key={idx} className='text-light-gray font-[500] md:text-[20px] mb-1'>
               {item}
             </p>
           ))}
@@ -63,7 +63,7 @@ const Footer = () => {
 
       <div className="mt-10 mb-12">
         <hr className="border-t border-dotted border-light-pink w-[1280px] mx-auto my-4" />
-        <p className='text-[18px] font-light text-[#5C5470] ml-32'>
+        <p className='md:text-[18px] font-light text-[#5C5470] ml-32 text-xs text-center'>
           © Copyright, BOCO 2024
         </p>
       </div>

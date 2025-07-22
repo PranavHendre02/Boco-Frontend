@@ -118,7 +118,7 @@ const Home = () => {
       <CaseStudyCard />
 
       <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center mt-20 mb-20">
-        <button onClick={() => Newcase()} className="w-60 h-16 border-2 border-purple text-purple text-lg font-medium rounded-full hover:bg-purple hover:text-white transition">
+        <button onClick={() => Newcase()} className="md:w-60 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[30vw] h-[8vh]">
           Explore More Case Studies
         </button>
       </div>
@@ -126,17 +126,17 @@ const Home = () => {
       <section className=" bg-[#F6F3FF] ">
         <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center">
           <div>
-            <h1 className="text-5xl font-bold text-[#060237] pt-28 font-[sans-serif] mb-20">
+            <h1 className="text-2xl font-bold text-[#060237] pt-28 font-[sans-serif] mb-20 md:text-4xl">
               Let’s create something extraordinary together
             </h1>
           </div>
           <div className="flex gap-4 mb-20">
-            <button onClick={() => NewPage()} className="w-44 h-16 border-2 border-purple text-purple text-lg font-medium rounded-full hover:bg-purple hover:text-white transition">
+            <button onClick={() => NewPage()} className="md:w-44 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[25vw]">
               Audit My Website
             </button>
-            <button onClick={() => NewPage()} className="flex items-center justify-center w-44 h-16 bg-purple text-white text-lg font-medium rounded-full">
-              Book Call
-              <span className="ml-4 p-3 bg-white text-black rounded-full text-xl">
+            <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
+              <p className='hidden md:flex'>Book Call</p>
+              <span className="ml-4 p-3 md:bg-white md:text-black rounded-full text-xl bg-purple text-white">
                 <MdArrowOutward />
               </span>
             </button>
@@ -144,9 +144,9 @@ const Home = () => {
         </div>
       </section>
 
-      <div className='flex items-center justify-center mt-[69px] mb-[69px]'>
+      <div className='flex items-center justify-centermd: mt-[69px] md:mb-[69px]'>
         <div className='w-[1440px] h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
-          <h1 className='text-5xl font-bold text-purple'>
+          <h1 className='md:text-5xl font-bold text-purple text-xl'>
             {/* {footerHeading} */}
             Faster Websites. Higher conversion. More revenue.
           </h1>
