@@ -40,7 +40,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="w-full h-[116px] font-sans mb-5 relative z-50">
+    <div className="w-full h-[116px] font-sans mb- relative z-50">
       <div className='flex items-center justify-between mt-6 px-6 md:px-24'>
 
         {/* Brand Name */}

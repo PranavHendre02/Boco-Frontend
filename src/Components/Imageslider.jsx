@@ -35,7 +35,7 @@ const Images = [
 
 const Imageslider = () => {
     return (
-        <div className="relative w-[1140px] ">
+        <div className="relative w-[95vw] ">
             <Swiper
                 modules={[Navigation]}
                 navigation={{
@@ -46,9 +46,9 @@ const Imageslider = () => {
                 slidesPerView={6}
 
                 breakpoints={{
-                    320: { slidesPerView: 1.2 },
-                    640: { slidesPerView: 2.2 },
-                    1024: { slidesPerView: 3.5 },
+                    320: { slidesPerView: 6 },
+                    640: { slidesPerView: 5 },
+                    1024: { slidesPerView: 4 },
                 }}
             >
                 {Images.map((img, i) => (
@@ -56,14 +56,14 @@ const Imageslider = () => {
                         <img
                             src={img.url}
                             alt={`Slide ${i}`}
-                            className="w-[250px] h-[540px] mx-auto object-contain"
+                            className="w-[250px] h-[500px]  object-contain "
                         />
                     </SwiperSlide>
                 ))}
             </Swiper>
 
             {/* Custom Arrows */}
-            <button className='swiper-button-prev-custom absolute bottom-[-30px] left-12  p-3 rounded-full z-10 bg-light-pink transition'>
+            <button className='swiper-button-prev-custom absolute bottom-[-30px] left-12  p-3 rounded-full z-10 bg-light-pink transition '>
                 <FaArrowLeft />
             </button>
             <button className='swiper-button-next-custom absolute bottom-[-30px] right-12  p-3 rounded-full z-10 bg-light-pink transition'>

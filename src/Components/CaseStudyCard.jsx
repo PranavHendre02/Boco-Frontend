@@ -25,7 +25,7 @@ const CaseStudyCard = () => {
             <img
               src={fullImageUrl}
               alt="Case Study"
-              className="w-[568px] h-[636px] object-cover"
+              className="lg:w-[568px] lg:h-[636px] object-cover"
             />
           </div>
         );
