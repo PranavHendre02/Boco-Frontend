@@ -40,8 +40,66 @@ const Home = () => {
     <div>
       <Navbar />
 
-      <section className='flex items-center justify-center mt-0'>
-        <Imageslider />
+      <section className="w-full py-20 md:px-20 px-5">
+        <div className="max-w-full mx-auto flex flex-col md:flex-row items-center">
+          <div className="w-full md:w-1/2 font-[sans-serif] md:pl-16 mt-10 md:mt-0">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#060237] pb-8 text-center md:text-left">
+              We build high-converting Shopify stores that drive Profit
+            </h2>
+            <p className="text-lg md:text-xl font-medium text-[#060237] pb-8">
+              We're a leading Shopify & Shopify Plus agency who design and develop
+              strategic ecommerce websites
+            </p>
+            <ul className="list-disc pl-5 text-base md:text-xl font-bold text-[#060237] space-y-3 mb-6">
+              <li> Unmatched Speed & Stability</li>
+              <li>Build for Conversions</li>
+              <li>Reduced App Stack & Developer Dependencies</li>
+            </ul>
+            <div className="flex flex-row gap-4">
+              <button
+                onClick={NewPage}
+                className="md:w-44 md:h-14  border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[50vw] h-[6vh]"
+              >
+                Audit My Website
+              </button>
+              <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
+                <p className='hidden md:flex'>Talk To Us</p>
+                <span className="ml-4 p-3 md:bg-white md:text-black rounded-full text-xl bg-purple text-white">
+                  <MdArrowOutward />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2">
+            <img
+              src="https://res.cloudinary.com/drtosngvu/image/upload/v1752578649/sample15_f75786c956.png"
+              alt="Feature Image"
+              className="rounded-lg w-full md:max-w-[708px] h-auto "
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+
+      </section>
+
+      <section className='flex items-center justify-center flex-col'>
+        <div className=' md:w-[60vw] h-auto w-full pl-4'>
+          <h1 className='text-2xl md:text-5xl font-semibold text-[#060237] md:text-center mb-12 text-left'>
+            Stunningly Crafted Shopify Solutions
+            Driven by Insights
+
+          </h1>
+          <p className="text-xl md:text-xl font-normal text-[#060237] pb-8 mb-10 md:text-center text-left">
+            As Shopify Partners and a leading eCommerce Web Design Agency, we empower brands to thrive through strategic design and robust Shopify development. We bring a fresh strategic approach to your brand, focussing on delivering pixel perfect websites, built for Conversions & Growth.
+          </p>
+        </div>
+      </section>
+      <section className='flex items-center justify-center mt-0 w-full'>
+        <div>
+          <Imageslider />
+        </div>
       </section>
 
       <section className='flex items-center justify-center'>
