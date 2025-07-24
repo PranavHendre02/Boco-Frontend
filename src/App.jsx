@@ -5,6 +5,7 @@ import CaseStudies from './Pages/CaseStudies'
 import ShopifyStoreBuild from './Pages/ShopifyStoreBuild'
 import Newpage from './Pages/Newpage'
 import LandingPage from './Pages/LandingPage'
+import Talktous from './Pages/Talktous'
 
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
         <Route path='/Shopify-Store-Build' element={<ShopifyStoreBuild/>} />
         <Route path='/Newpage' element={<Newpage/>} />
         <Route path='/Landing-Page-Design' element={<LandingPage/>} />
-        {/* <Route path='/Talktous' element={<Talktous/>} /> */}
+        <Route path='/Talktous' element={<Talktous/>} />
       </Routes>
     </div>
   )
