@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import API from "../api";
 import Imageslider from '../Components/Imageslider';
+import Marquee from '../Components/MarqueeSlider';
+import MarqueeSlider from '../Components/MarqueeSlider';
 
 
 const Home = () => {
@@ -40,7 +42,7 @@ const Home = () => {
     <div>
       <Navbar />
 
-      <section className="w-full py-20 md:px-20 px-5">
+      <section className="w-full py-20 md:px-16 px-5">
         <div className="max-w-full mx-auto flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 font-[sans-serif] md:pl-16 mt-10 md:mt-0">
             <h2 className="text-3xl md:text-5xl font-bold text-[#060237] pb-8 text-center md:text-left">
@@ -80,8 +82,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
-
+      <section className='mb-28'>
+        <MarqueeSlider />
       </section>
 
       <section className='flex items-center justify-center flex-col'>

@@ -4,7 +4,7 @@ import Home from './Pages/Home'
 import CaseStudies from './Pages/CaseStudies'
 import ShopifyStoreBuild from './Pages/ShopifyStoreBuild'
 import Newpage from './Pages/Newpage'
-// import 'react-slideshow-image/dist/styles.css';
+import LandingPage from './Pages/LandingPage'
 
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
         <Route path='/Case-Studies' element={<CaseStudies/>} />
         <Route path='/Shopify-Store-Build' element={<ShopifyStoreBuild/>} />
         <Route path='/Newpage' element={<Newpage/>} />
+        <Route path='/Landing-Page-Design' element={<LandingPage/>} />
         {/* <Route path='/Talktous' element={<Talktous/>} /> */}
       </Routes>
     </div>
