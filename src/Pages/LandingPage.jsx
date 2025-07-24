@@ -6,8 +6,27 @@ import Qna from '../Components/Qna'
 import { MdArrowOutward } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import MarqueeSlider from '../Components/MarqueeSlider'
+import { useState, useEffect } from 'react'
+import API from "../api";
 
 const LandingPage = () => {
+    const [data, setdata] = useState()
+    useEffect(() => {
+        const fetchLandingpage = async () => {
+            try {
+                let res = await API.get('/landing-page')
+                console.log(res.data);
+                setdata(res.data.data);
+
+            } catch (error) {
+                console.log("there is an error" + error)
+            }
+
+        }
+
+        fetchLandingpage();
+    }, [])
+
     const navigate = useNavigate();
     const NewPage = () => {
         navigate("/Newpage");
@@ -20,16 +39,30 @@ const LandingPage = () => {
         navigate("/Talktous")
     }
 
+    if (!data) {
+        return (
+            <h1 className="text-xl text-gray-600 text-center mt-20">Loading....</h1>
+        );
+    }
+
+    const {
+        landingHeroHead,
+        LandingHeroSubhead,
+        LandSubText,
+        ImageSliderHead,
+        ImageSkiderSubHead,
+        LandPageCardHead,
+    } = data
+
     return (
         <div>
             <Navbar />
             <section className="w-full max-w-[1440px] mx-auto text-center px-6 py-0 flex flex-col items-center ">
                 <h1 className="text-3xl md:text-5xl font-bold text-[#060237] mb-6">
-                    {/* {Section1Head} */}Custom Shopify Landing Pages
-                    Designed to Convert
+                    {landingHeroHead}
                 </h1>
                 <p className="text-lg md:text-2xl font-normal text-[#060237] mb-10 max-w-3xl">
-                    {/* {Section1SubHead} */}Whether you're launching a new product, collection, running a campaign, or want to boost your sales, our high-conversion landing pages are designed to turn visitors into loyal customers.
+                    {LandingHeroSubhead[0]?.children[0]?.text}
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-4">
@@ -70,9 +103,9 @@ const LandingPage = () => {
                             We do the heavy lifting
                         </p>
                         <ul className="list-disc pl-5 text-base md:text-3xl font-thin text-[#060237] space-y-12 mb-6">
-                            <li> Strategic Planning & Research</li>
-                            <li>Complete Figma Design</li>
-                            <li>Deployment & Testing</li>
+                            {LandSubText.map((element, id) => (
+                                <li key={id}>{element?.children[0]?.text}</li>
+                            ))}
                         </ul>
                         <div className="flex flex-row gap-4 mt-8 justify-between">
                             <button onClick={() => NewPage()} className="flex items-center justify-center md:w-[20vw] md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
@@ -96,10 +129,10 @@ const LandingPage = () => {
             <section className='flex items-center justify-center border-t border-dotted border-light-pink mt-10'>
                 <div className='md:text-center text-left pl-6 mt-24'>
                     <h1 className="text-3xl md:text-5xl font-semibold text-[#060237] mb-6">
-                        {/* {Section1Head} */}Fast, Fresh, and Conversion Optimized
+                        {ImageSliderHead}
                     </h1>
                     <p className="text-lg md:text-[1.1rem] font-normal text-[#060237] mb-10 max-w-3xl">
-                        {/* {Section1SubHead} */}Whatever you sell online, our full-stack conversion experts will find your brands unignorable features and weave them into a conversion optimized landing page.
+                        {ImageSkiderSubHead[0]?.children[0]?.text}
                     </p>
                 </div>
             </section>
@@ -172,7 +205,7 @@ const LandingPage = () => {
             <div className='flex items-center justify-center mt-[69px] mb-[69px] '>
                 <div className='w-full h-[197px] flex items-center justify-center border-t border-b border-light-pink flex-col'>
                     <h1 className='md:text-5xl font-bold text-purple text-xl text-center'>
-                        {/* {footerHeading} */}Have questions about your landing page needs?
+                        Have questions about your landing page needs?
                     </h1>
                     <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full mt-6">
                         <p className='hidden md:flex'>Talk To Us</p>

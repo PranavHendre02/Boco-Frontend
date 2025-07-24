@@ -63,7 +63,8 @@ const Imageslider = () => {
         ))}
       </Swiper>
 
-      {/* Custom Arrows */}
+
+      
       <button className="swiper-button-prev-custom absolute bottom-[-30px] left-6 p-3 rounded-full z-10 bg-light-pink">
         <FaArrowLeft />
       </button>

@@ -12,30 +12,46 @@ import MarqueeSlider from '../Components/MarqueeSlider';
 
 
 const Home = () => {
-  // const navigateCase useNavigate();
+  
   const navigate = useNavigate()
   const [data, setData] = useState(null);
+
   const NewPage = () => {
     navigate("/Newpage");
   }
 
   useEffect(() => {
-    const loaddetails = async () => {
+    const fetchhome = async () => {
       try {
         let res = await API.get('https://boco-backend-q5zy.onrender.com/api/main-page')
         console.log(res.data);
+        setData(res.data.data)
       } catch (error) {
         console.log("this is the Error" + error);
 
       }
     }
-    loaddetails();
+    fetchhome();
 
   }, [])
 
   const Newcase = () => {
     navigate("/Case-Studies")
   }
+  if (!data) {
+    return <h1 className="text-center text-xl mt-10">Loading...</h1>;
+  }
+  const {
+    heroSectionHead,
+    heroSectionsubHead,
+    heroSectionsubList,
+    ImageSliderHead,
+    imageSliderSubhead,
+    CardHead,
+    CasestudyHead,
+    FooterHead
+  } = data;
+
 
 
   return (
@@ -46,16 +62,15 @@ const Home = () => {
         <div className="max-w-full mx-auto flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 font-[sans-serif] md:pl-16 mt-10 md:mt-0">
             <h2 className="text-3xl md:text-5xl font-bold text-[#060237] pb-8 text-center md:text-left">
-              We build high-converting Shopify stores that drive Profit
+              {heroSectionHead}
             </h2>
             <p className="text-lg md:text-xl font-medium text-[#060237] pb-8">
-              We're a leading Shopify & Shopify Plus agency who design and develop
-              strategic ecommerce websites
+              {heroSectionsubHead}
             </p>
             <ul className="list-disc pl-5 text-base md:text-xl font-bold text-[#060237] space-y-3 mb-6">
-              <li> Unmatched Speed & Stability</li>
-              <li>Build for Conversions</li>
-              <li>Reduced App Stack & Developer Dependencies</li>
+              {heroSectionsubList.map((element, id)=>(
+                <li key={id}>{element?.children[0]?.text}</li>
+              ))}
             </ul>
             <div className="flex flex-row gap-4">
               <button
@@ -89,12 +104,11 @@ const Home = () => {
       <section className='flex items-center justify-center flex-col'>
         <div className=' md:w-[60vw] h-auto w-full pl-4'>
           <h1 className='text-2xl md:text-5xl font-semibold text-[#060237] md:text-center mb-12 text-left'>
-            Stunningly Crafted Shopify Solutions
-            Driven by Insights
+            {ImageSliderHead}
 
           </h1>
           <p className="text-xl md:text-xl font-normal text-[#060237] pb-8 mb-10 md:text-center text-left">
-            As Shopify Partners and a leading eCommerce Web Design Agency, we empower brands to thrive through strategic design and robust Shopify development. We bring a fresh strategic approach to your brand, focussing on delivering pixel perfect websites, built for Conversions & Growth.
+            {imageSliderSubhead}
           </p>
         </div>
       </section>
@@ -108,8 +122,7 @@ const Home = () => {
         <div className='px-4 mb-10 mt-24'>
           <div className='text-left md:text-center'>
             <h1 className='text-3xl font-bold text-purple font-sans md:text-4xl '>
-              Enhance customer experience
-              by focusing on the details that matters most
+              {CardHead}
             </h1>
           </div>
         </div>
@@ -170,7 +183,7 @@ const Home = () => {
       <div className='flex items-center justify-center md:mt-[69px] md:mb-[69px]'>
         <div className='w-[1440px] h-[197px] flex items-center justify-center '>
           <h1 className='text-3xl font-bold text-purple md:text-4xl text-center'>
-            Read our recent Case Studies
+            {CasestudyHead}
           </h1>
         </div>
       </div>
@@ -207,8 +220,7 @@ const Home = () => {
       <div className='flex items-center justify-centermd: mt-[69px] md:mb-[69px]'>
         <div className='w-full h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
           <h1 className='md:text-5xl font-bold text-purple text-xl text-center'>
-            {/* {footerHeading} */}
-            Faster Websites. Higher conversion. More revenue.
+            {FooterHead}
           </h1>
         </div>
       </div>

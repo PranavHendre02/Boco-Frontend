@@ -15,7 +15,7 @@ const ShopifyStoreBuild = () => {
         navigate("/Newpage");
     };
 
-    const NewCase=()=>{
+    const NewCase = () => {
         navigate("/Shopify-Store-Build")
     }
     useEffect(() => {
@@ -66,12 +66,12 @@ const ShopifyStoreBuild = () => {
                     >
                         Audit My Website
                     </button>
-                   <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
-                            <p className='hidden md:flex'>Talk To Us</p>
-                            <span className="ml-4 p-3 md:bg-white md:text-black rounded-full text-xl bg-purple text-white">
-                                <MdArrowOutward />
-                            </span>
-                        </button>
+                    <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
+                        <p className='hidden md:flex'>Talk To Us</p>
+                        <span className="ml-4 p-3 md:bg-white md:text-black rounded-full text-xl bg-purple text-white">
+                            <MdArrowOutward />
+                        </span>
+                    </button>
                 </div>
 
                 <img
@@ -141,11 +141,11 @@ const ShopifyStoreBuild = () => {
                             {Section3SubHead}
                         </p>
                         <ul className="list-disc pl-5 text-base md:text-xl font-bold text-[#060237] space-y-3">
-                            <li>Unmatched Speed & Stability</li>
-                            <li>Build for Conversions</li>
-                            <li>Reduced App Stack & Developer Dependencies</li>
-                            <li>Fully Integrated with your tools</li>
-                            <li>Highly Scalable</li>
+
+                            {Section3List.map((element, id) => (
+                                <li key={id}>{element?.children[0]?.text}</li>
+                            ))}
+
                         </ul>
                     </div>
                 </div>
@@ -153,9 +153,9 @@ const ShopifyStoreBuild = () => {
 
             <section className="w-full py-28 px-4">
                 <div className="flex justify-center flex-col items-center">
-                   
-                    <Imageslidertwo/>
-    
+
+                    <Imageslidertwo />
+
                     <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center mt-20">
                         <button onClick={() => NewCase()} className="md:w-60 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[50vw] h-[8vh]">
                             Explore More Case Studies
@@ -181,9 +181,11 @@ const ShopifyStoreBuild = () => {
                             {Section5SubHead[0]?.children[0]?.text || ""}
                         </p>
                         <ul className="list-disc pl-5 text-base md:text-xl font-bold text-[#060237] space-y-3 mb-6">
-                            <li>Sign up for a FREE Audit</li>
-                            <li>Share the required brand details</li>
-                            <li>Sit back and wait for your audit report</li>
+
+                            {Section5LIst.map((element, id) => (
+                                <li key={id}>{element?.children[0]?.text}</li>
+                            ))}
+
                         </ul>
                         <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
                             <p className='hidden md:flex'>Audit My Website</p>

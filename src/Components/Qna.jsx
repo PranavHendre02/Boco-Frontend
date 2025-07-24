@@ -30,7 +30,6 @@ const Qna = () => {
         }
     ];
 
-    // Array to track individual dropdown open/close state
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleDropdown = (index) => {
@@ -48,7 +47,7 @@ const Qna = () => {
                 <div className='flex flex-col items-center gap-6'>
                     {qnaData.map((item, index) => (
                         <div key={index} className='w-full'>
-                            {/* Question Section */}
+                           
                             <div
                                 className={`w-full min-h-[70px] px-8 py-4 bg-[#F6F3FF] flex items-center justify-between transition-all cursor-pointer
                                 ${openIndex === index ? 'rounded-t-[25px]' : 'rounded-[25px]'}`}
@@ -62,7 +61,6 @@ const Qna = () => {
                                 </button>
                             </div>
 
-                            {/* Answer Section */}
                             {openIndex === index && (
                                 <div className='w-full px-8 py-4 bg-[#F6F3FF] border-t border-dotted rounded-b-[25px]'>
                                     <p className='text-[16px] text-[#666287] font-normal font-[sans-serif]'>

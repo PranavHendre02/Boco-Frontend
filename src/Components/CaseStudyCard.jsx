@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import API from '../api'; // baseURL: http://localhost:1337/api
 
 const CaseStudyCard = () => {
   const [cards, setCards] = useState([]);
