@@ -111,7 +111,7 @@ const LandingPage = () => {
             </div>
             <section className='flex items-center justify-center mt-24'>
                 <div className='flex items-center justify-center font-[sans-serif]'>
-                    <div className='w-[1248px] text-center'>
+                    <div className='w-ful text-center p-5'>
                         <p className='md:text-2xl font-semibold text-light-gray md:mt-10 text-xl uppercase'>why us</p>
                         <h1 className='md:text-5xl font-bold text-purple mt-6 text-2xl mb-12 font-sans'>What We’re
                             <span className=' bg-yellow-200'> Especially Good At</span></h1>
