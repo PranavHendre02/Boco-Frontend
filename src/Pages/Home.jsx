@@ -12,7 +12,7 @@ import MarqueeSlider from '../Components/MarqueeSlider';
 
 
 const Home = () => {
-  
+
   const navigate = useNavigate()
   const [data, setData] = useState(null);
 
@@ -39,7 +39,13 @@ const Home = () => {
     navigate("/Case-Studies")
   }
   if (!data) {
-    return <h1 className="text-center text-xl mt-10">Loading...</h1>;
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+        <div className="w-16 h-16 border-4 border-purple-500 border-dashed rounded-full animate-spin"></div>
+        <p className="mt-6 text-lg text-gray-700 font-medium">Waking up the server...</p>
+        <p className="text-sm text-gray-500 mt-2">This may take a few seconds ⏳</p>
+      </div>
+    )
   }
   const {
     heroSectionHead,
@@ -68,7 +74,7 @@ const Home = () => {
               {heroSectionsubHead}
             </p>
             <ul className="list-disc pl-5 text-base md:text-xl font-bold text-[#060237] space-y-3 mb-6">
-              {heroSectionsubList.map((element, id)=>(
+              {heroSectionsubList.map((element, id) => (
                 <li key={id}>{element?.children[0]?.text}</li>
               ))}
             </ul>
