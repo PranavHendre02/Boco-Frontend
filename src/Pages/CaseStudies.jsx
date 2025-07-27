@@ -25,7 +25,7 @@ const CaseStudies = () => {
   }, []);
 
   if (!casePageData) {
-    return <p className="text-center mt-10 text-gray-500"></p>;
+    return <p className="text-center mt-10 text-gray-500">Loading.....</p>;
   }
 
   const heading = casePageData.CaseStudyPageHead;
