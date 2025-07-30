@@ -1,51 +1,53 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
-import CaseStudyCard from '../Components/CaseStudyCard'
+import React from "react";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import CaseStudyCard from "../Components/CaseStudyCard";
 import { MdArrowOutward } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import API from "../api";
-import Imageslider from '../Components/Imageslider';
-import Marquee from '../Components/MarqueeSlider';
-import MarqueeSlider from '../Components/MarqueeSlider';
-
+import Imageslider from "../Components/Imageslider";
+import Marquee from "../Components/MarqueeSlider";
+import MarqueeSlider from "../Components/MarqueeSlider";
 
 const Home = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
 
   const NewPage = () => {
     navigate("/Newpage");
-  }
+  };
 
   useEffect(() => {
     const fetchhome = async () => {
       try {
-        let res = await API.get('https://boco-backend-q5zy.onrender.com/api/main-page')
+        let res = await API.get(
+          "https://boco-backend-q5zy.onrender.com/api/main-page"
+        );
         console.log(res.data);
-        setData(res.data.data)
+        setData(res.data.data);
       } catch (error) {
         console.log("this is the Error" + error);
-
       }
-    }
+    };
     fetchhome();
-
-  }, [])
+  }, []);
 
   const Newcase = () => {
-    navigate("/Case-Studies")
-  }
+    navigate("/Case-Studies");
+  };
   if (!data) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-white">
         <div className="w-16 h-16 border-4 border-purple-500 border-dashed rounded-full animate-spin"></div>
-        <p className="mt-6 text-lg text-gray-700 font-medium">Waking up the server...</p>
-        <p className="text-sm text-gray-500 mt-2">This may take a few seconds ⏳</p>
+        <p className="mt-6 text-lg text-gray-700 font-medium">
+          Waking up the server...
+        </p>
+        <p className="text-sm text-gray-500 mt-2">
+          This may take a few seconds ⏳
+        </p>
       </div>
-    )
+    );
   }
   const {
     heroSectionHead,
@@ -55,10 +57,8 @@ const Home = () => {
     imageSliderSubhead,
     CardHead,
     CasestudyHead,
-    FooterHead
+    FooterHead,
   } = data;
-
-
 
   return (
     <div>
@@ -85,8 +85,11 @@ const Home = () => {
               >
                 Audit My Website
               </button>
-              <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
-                <p className='hidden md:flex'>Talk To Us</p>
+              <button
+                onClick={() => NewPage()}
+                className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full"
+              >
+                <p className="hidden md:flex">Talk To Us</p>
                 <span className="ml-4 p-3 md:bg-white md:text-black rounded-full text-xl bg-purple text-white">
                   <MdArrowOutward />
                 </span>
@@ -103,31 +106,30 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='mb-28'>
+      <section className="mb-28">
         <MarqueeSlider />
       </section>
 
-      <section className='flex items-center justify-center flex-col'>
-        <div className=' md:w-[60vw] h-auto w-full pl-4'>
-          <h1 className='text-2xl md:text-5xl font-semibold text-[#060237] md:text-center mb-12 text-left'>
+      <section className="flex items-center justify-center flex-col">
+        <div className=" md:w-[60vw] h-auto w-full pl-4">
+          <h1 className="text-2xl md:text-5xl font-semibold text-[#060237] md:text-center mb-12 text-left">
             {ImageSliderHead}
-
           </h1>
           <p className="text-xl md:text-xl font-normal text-[#060237] pb-8 mb-10 md:text-center text-left">
             {imageSliderSubhead}
           </p>
         </div>
       </section>
-      <section className='flex items-center justify-center mt-0 w-full'>
+      <section className="flex items-center justify-center mt-0 w-full">
         <div>
           <Imageslider />
         </div>
       </section>
 
-      <section className='flex items-center justify-center'>
-        <div className='px-4 mb-10 mt-24'>
-          <div className='text-left md:text-center'>
-            <h1 className='text-3xl font-bold text-purple font-sans md:text-4xl '>
+      <section className="flex items-center justify-center">
+        <div className="px-4 mb-10 mt-24">
+          <div className="text-left md:text-center">
+            <h1 className="text-3xl font-bold text-purple font-sans md:text-4xl ">
               {CardHead}
             </h1>
           </div>
@@ -136,7 +138,6 @@ const Home = () => {
 
       <section className="w-full py-10">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-
           <div className="bg-[#F6F3FF] rounded-xl p-6 shadow-md">
             <img
               src="https://res.cloudinary.com/drtosngvu/image/upload/v1752578644/sample11_ec744124bb.png"
@@ -152,7 +153,6 @@ const Home = () => {
             </p>
           </div>
 
-
           <div className="bg-[#F6F3FF] rounded-xl p-6 shadow-md">
             <img
               src="https://res.cloudinary.com/drtosngvu/image/upload/v1752578644/sample12_e113451866.png"
@@ -167,7 +167,6 @@ const Home = () => {
               stability, ensuring user engagement & enhanced conversions.
             </p>
           </div>
-
 
           <div className="bg-[#F6F3FF] rounded-xl p-6 shadow-md">
             <img
@@ -186,9 +185,9 @@ const Home = () => {
         </div>
       </section>
 
-      <div className='flex items-center justify-center md:mt-[69px] md:mb-[69px]'>
-        <div className='w-[1440px] h-[197px] flex items-center justify-center '>
-          <h1 className='text-3xl font-bold text-purple md:text-4xl text-center'>
+      <div className="flex items-center justify-center md:mt-[69px] md:mb-[69px]">
+        <div className="w-[1440px] h-[197px] flex items-center justify-center ">
+          <h1 className="text-3xl font-bold text-purple md:text-4xl text-center">
             {CasestudyHead}
           </h1>
         </div>
@@ -197,7 +196,10 @@ const Home = () => {
       <CaseStudyCard />
 
       <div className="max-w-[1200px] mx-auto flex items-center flex-col justify-center mt-20 mb-20">
-        <button onClick={() => Newcase()} className="md:w-60 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[50vw] h-[8vh]">
+        <button
+          onClick={() => Newcase()}
+          className="md:w-60 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[50vw] h-[8vh]"
+        >
           Explore More Case Studies
         </button>
       </div>
@@ -210,11 +212,17 @@ const Home = () => {
             </h1>
           </div>
           <div className="flex gap-4 mb-20">
-            <button onClick={() => NewPage()} className="md:w-44 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[25vw]">
+            <button
+              onClick={() => NewPage()}
+              className="md:w-44 md:h-16 border-2 border-purple text-purple md:text-lg font-medium rounded-full hover:bg-purple hover:text-white transition text-xs w-[25vw]"
+            >
               Audit My Website
             </button>
-            <button onClick={() => NewPage()} className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full">
-              <p className='hidden md:flex'>Book Call</p>
+            <button
+              onClick={() => NewPage()}
+              className="flex items-center justify-center md:w-44 md:h-16 md:bg-purple md:text-white md:text-lg font-medium rounded-full"
+            >
+              <p className="hidden md:flex">Book Call</p>
               <span className="ml-4 p-3 md:bg-white md:text-black rounded-full text-xl bg-purple text-white">
                 <MdArrowOutward />
               </span>
@@ -223,9 +231,9 @@ const Home = () => {
         </div>
       </section>
 
-      <div className='flex items-center justify-centermd: mt-[69px] md:mb-[69px]'>
-        <div className='w-full h-[197px] flex items-center justify-center border-t border-b border-light-pink'>
-          <h1 className='md:text-5xl font-bold text-purple text-xl text-center'>
+      <div className="flex items-center justify-centermd: mt-[69px] md:mb-[69px]">
+        <div className="w-full h-[197px] flex items-center justify-center border-t border-b border-light-pink">
+          <h1 className="md:text-5xl font-bold text-purple text-xl text-center">
             {FooterHead}
           </h1>
         </div>
@@ -233,7 +241,7 @@ const Home = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const CaseStudyCard = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     const fetchCards = async () => {
-      const url1='https://res.cloudinary.com/drtosngvu/image/upload/v1752578590/sample9_920bc59582.png'
-      const url2='https://res.cloudinary.com/drtosngvu/image/upload/v1752578595/sample10_b594162259.png'
-      setCards([url1,url2])
+      const url1 =
+        "https://res.cloudinary.com/drtosngvu/image/upload/v1752578590/sample9_920bc59582.png";
+      const url2 =
+        "https://res.cloudinary.com/drtosngvu/image/upload/v1752578595/sample10_b594162259.png";
+      setCards([url1, url2]);
     };
 
     fetchCards();

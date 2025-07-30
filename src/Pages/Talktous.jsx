@@ -1,68 +1,68 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { MdArrowOutward } from "react-icons/md";
-import API from '../api';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import API from "../api";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import { useNavigate } from "react-router-dom";
 
 const Talktous = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    brandname: '',
-    yourname: '',
-    websiteurl: '',
-    emailaddress: '',
-    Phonenumber: '',
-    Monthlystores: '',
-    conversion: '',
+    brandname: "",
+    yourname: "",
+    websiteurl: "",
+    emailaddress: "",
+    Phonenumber: "",
+    Monthlystores: "",
+    conversion: "",
     issue: [],
-    overview: '',
-    today: ''
+    overview: "",
+    today: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post('/form-submissions', { data: formData });
-      alert('Form submitted successfully!');
+      await API.post("/form-submissions", { data: formData });
+      alert("Form submitted successfully!");
       setFormData({
-        brandname: '',
-        yourname: '',
-        websiteurl: '',
-        emailaddress: '',
-        Phonenumber: '',
-        Monthlystores: '',
-        conversion: '',
+        brandname: "",
+        yourname: "",
+        websiteurl: "",
+        emailaddress: "",
+        Phonenumber: "",
+        Monthlystores: "",
+        conversion: "",
         issue: [],
-        overview: '',
-        today: ''
+        overview: "",
+        today: "",
       });
       navigate("/Newpage");
     } catch (error) {
-      console.error('Submission failed:', error);
-      alert('Submission failed. Check console.');
+      console.error("Submission failed:", error);
+      alert("Submission failed. Check console.");
     }
   };
 
   const optionsMonthly = [
-    'Less than 10k',
-    'Between 10k to 50k',
-    'Between 50k to 100k',
-    'More than 100k+'
+    "Less than 10k",
+    "Between 10k to 50k",
+    "Between 50k to 100k",
+    "More than 100k+",
   ];
 
   const issuesList = [
-    'Website Design & Development',
-    'High Converting Landing Pages',
-    'Technical Maintenance & Support',
-    'Conversion Rate Optimization'
+    "Website Design & Development",
+    "High Converting Landing Pages",
+    "Technical Maintenance & Support",
+    "Conversion Rate Optimization",
   ];
 
   return (
@@ -76,22 +76,32 @@ const Talktous = () => {
       <div className="flex justify-center px-4">
         <div className="w-full max-w-screen-lg">
           <div className="text-center mt-20">
-            <h1 className="text-3xl md:text-5xl font-medium text-[#060237] font-sans">Got a Project? Let's Talk!</h1>
+            <h1 className="text-3xl md:text-5xl font-medium text-[#060237] font-sans">
+              Got a Project? Let's Talk!
+            </h1>
             <p className="text-xl md:text-3xl font-light text-[#140152] mt-6 mb-20">
-              Simply complete the form below and we'll get in touch!<br />
+              Simply complete the form below and we'll get in touch!
+              <br />
               Or send us an email to hello@boco.agency
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-10 text-base md:text-xl font-['Plus Jakarta Sans'] text-black">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-10 text-base md:text-xl font-['Plus Jakarta Sans'] text-black"
+          >
             {/* Text Inputs */}
             {[
-              { label: '1. Brand Name', name: 'brandname' },
-              { label: '2. Your Name', name: 'yourname' },
-              { label: '3. Website URL', name: 'websiteurl' },
-              { label: '4. Email Address', name: 'emailaddress', type: 'email' },
-              { label: '5. Phone Number', name: 'Phonenumber', type: 'number' },
-            ].map(({ label, name, type = 'text' }) => (
+              { label: "1. Brand Name", name: "brandname" },
+              { label: "2. Your Name", name: "yourname" },
+              { label: "3. Website URL", name: "websiteurl" },
+              {
+                label: "4. Email Address",
+                name: "emailaddress",
+                type: "email",
+              },
+              { label: "5. Phone Number", name: "Phonenumber", type: "number" },
+            ].map(({ label, name, type = "text" }) => (
               <div key={name}>
                 <label className="block mb-2">{label}*</label>
                 <input
@@ -107,7 +117,9 @@ const Talktous = () => {
 
             {/* Monthly Store Sessions */}
             <div>
-              <label className="block mb-3">6. What are your Monthly Store Sessions?*</label>
+              <label className="block mb-3">
+                6. What are your Monthly Store Sessions?*
+              </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {optionsMonthly.map((option, index) => (
                   <label key={index} className="flex items-center">
@@ -128,7 +140,9 @@ const Talktous = () => {
 
             {/* Conversion */}
             <div>
-              <label className="block mb-3">7. What is your current Conversion Rate?</label>
+              <label className="block mb-3">
+                7. What is your current Conversion Rate?
+              </label>
               <input
                 type="text"
                 name="conversion"
@@ -141,7 +155,9 @@ const Talktous = () => {
             {/* Issues */}
             <div>
               <label className="block mb-4">
-                8. What issues are you facing currently with your Shopify Store?*<br />
+                8. What issues are you facing currently with your Shopify
+                Store?*
+                <br />
                 <span className="text-sm">(Select all that apply)</span>
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -181,7 +197,9 @@ const Talktous = () => {
 
             {/* How did you find us? */}
             <div>
-              <label className="block mb-3">10. How did you find us today?</label>
+              <label className="block mb-3">
+                10. How did you find us today?
+              </label>
               <input
                 type="text"
                 name="today"

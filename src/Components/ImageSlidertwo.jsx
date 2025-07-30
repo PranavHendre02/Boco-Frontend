@@ -8,13 +8,13 @@ import "swiper/css/navigation";
 
 const Images = [
   {
-    url: 'https://res.cloudinary.com/drtosngvu/image/upload/v1752578689/sample26_7db93ff7f1.png'
+    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578689/sample26_7db93ff7f1.png",
   },
   {
-    url: 'https://res.cloudinary.com/drtosngvu/image/upload/v1752578687/sample27_7c916b30d2.png'
+    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578687/sample27_7c916b30d2.png",
   },
   {
-    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578689/sample28_956613db54.png"
+    url: "https://res.cloudinary.com/drtosngvu/image/upload/v1752578689/sample28_956613db54.png",
   },
 ];
 
